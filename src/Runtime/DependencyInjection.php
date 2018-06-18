@@ -11,7 +11,7 @@ use Symfony\Component\Console\Application;
 use Consolidation\Config\ConfigInterface;
 use Composer\Autoload\ClassLoader;
 use League\Container\ContainerInterface;
-use Drush\SiteAlias\SiteAliasManager;
+use Consolidation\SiteAlias\SiteAliasManager;
 
 /**
  * Prepare our Dependency Injection Container
