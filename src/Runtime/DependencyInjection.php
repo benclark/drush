@@ -104,7 +104,7 @@ class DependencyInjection
         // Add inflectors. @see \Drush\Boot\BaseBoot::inflect
         $container->inflector(\Drush\Boot\AutoloaderAwareInterface::class)
             ->invokeMethod('setAutoloader', ['loader']);
-        $container->inflector(\Drush\SiteAlias\SiteAliasManagerAwareInterface::class)
+        $container->inflector(\Consolidation\SiteAlias\SiteAliasManagerAwareInterface::class)
             ->invokeMethod('setSiteAliasManager', ['site.alias.manager']);
     }
 
