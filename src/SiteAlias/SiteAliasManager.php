@@ -7,7 +7,6 @@ namespace Drush\SiteAlias;
 class SiteAliasManager
 {
     protected $aliasLoader;
-    protected $legacyAliasConverter;
     protected $selfAliasRecord;
     protected $specParser;
     protected $root = '';
@@ -20,7 +19,6 @@ class SiteAliasManager
     public function __construct($aliasLoader = null, $root = '')
     {
         $this->aliasLoader = $aliasLoader ?: new SiteAliasFileLoader();
-        $this->legacyAliasConverter = new LegacyAliasConverter($this->aliasLoader->discovery());
         $this->specParser = new SiteSpecParser();
         $this->selfAliasRecord = new AliasRecord();
         $this->root = $root;
