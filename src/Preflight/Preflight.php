@@ -255,7 +255,8 @@ class Preflight
         $paths = $this->configLocator->getSiteAliasPaths($this->preflightArgs->aliasPaths(), $this->environment);
 
         // Configure alias manager.
-        $this->aliasManager = (new SiteAliasManager())->addSearchLocations($paths);
+        $aliasFileLoader = new \Drush\SiteAlias\SiteAliasFileLoader();
+        $this->aliasManager = (new SiteAliasManager($aliasFileLoader))->addSearchLocations($paths);
         $this->aliasManager->setReferenceData($config->export());
         $siteLocator = new PreflightSiteLocator($this->aliasManager);
         $selfAliasRecord = $siteLocator->findSite($this->preflightArgs, $this->environment, $root);
